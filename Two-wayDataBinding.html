@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>手写双向绑定</title>
+  <style>
+  .main{margin:20px;font-size:14px;line-height:30px;color:#666;box-sizing:border-box;}
+  #model{height:30px;width:300px;padding:0 10px;color:#999;border:1px solid #e0e0e0;}
+  #modelText{height:30px;padding:0 10px;}
+  </style>
+</head>
+<body>
+  <div class="main">
+    <input type="text" id="model">
+    <div id="modelText"></div>
+  </div>
+</body>
+<script>
+var obj = {},
+    defaultName = "test",
+    model = document.querySelector("#model"),
+    modelText = document.querySelector("#modelText");
+model.value = defaultName;
+modelText.textContent = defaultName;
+
+//定义属性，监控改变
+Object.defineProperty(obj,"name",{
+	get:function(){
+	  console.log("获取值");
+	  return defaultName;
+	},
+	set:function(newValue){
+	  console.log("设置新值");
+	  defaultName = newValue;
+	  // console.log("实现 模型 => 视图");
+	  model.value = newValue;
+	  modelText.textContent = newValue;
+	}
+});
+
+model.addEventListener("keyup", function(){
+	obj.name = this.value;
+	console.log("实现 视图 => 模型");
+},false)
+</script>
+</html>

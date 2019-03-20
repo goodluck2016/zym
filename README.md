@@ -1,2 +1,2 @@
-# zym
-my blog
+# blog
+#### 双向绑定
