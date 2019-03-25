@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>分页</title>
+    <style>
+    .page { 
+      height: 40px; 
+      text-align: center; 
+      color: #888; 
+      margin: 20px auto 0; 
+      background: #f2f2f2; 
+    } 
+    .pagelist { 
+      font-size: 0; 
+      background: #fff; 
+      padding:20px;
+      border:1px solid #eee;
+    } 
+    .pagelist span { 
+      font-size: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      min-width: 32px;
+      height: 32px;
+      line-height: 30px;
+      list-style: none;
+      text-align: center;
+      cursor: pointer;
+      color: #666;
+      font-family: Arial;
+      border: 1px solid #dcdee2;
+      box-sizing: border-box;
+      border-radius: 4px;
+      transition: all .2s ease-in-out;
+    } 
+    .pagelist .jump { 
+      margin-left: 5px; 
+    } 
+    .pagelist .bgprimary { 
+      cursor: default; 
+      color: #f60; 
+      border: 1px solid #f60;
+      font-family: Arial;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: border .2s ease-in-out,color .2s ease-in-out; 
+    } 
+    .jumpinp input { 
+      width: 55px; 
+      line-height: 26px; 
+      font-size: 13px; 
+      border: 0; 
+      border-radius: 4px;
+      text-align: center; 
+    } 
+   .pagelist span.ellipsis { 
+      border:0; 
+      font-weight:400;
+      font-size: 28px;
+      line-height: 20px;
+      color: #999;
+      letter-spacing: -2px;
+    } 
+   .pagelist span.jumppoint { 
+      border:0;
+      margin-left: 30px; 
+      margin-right: 10px;
+    } 
+    .pagelist .gobtn {} 
+    .bgprimary { 
+      cursor: default; 
+      color: #f60; 
+      border: 1px solid #f60; 
+    }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div id="app"> 
+        <div> 
+          <div class="page" v-show="show"> 
+            <div class="pagelist"> 
+              <span class="jump" v-show="current_page>1" @click="{current_page--}"> &lt; </span> 
+              <span v-show="current_page>5" class="jump" @click="jumpPage(1)">1</span> 
+              <span class="ellipsis" v-show="efont">...</span> 
+              <span class="jump" v-for="num in indexs" :class="{bgprimary:current_page==num}" @click="jumpPage(num)">{{num}}</span> 
+              <span class="ellipsis" v-show="efont&&current_page<pages-4">...</span> 
+       
+              <span class="jump" @click="{current_page++}"> &gt; </span> 
+              <span v-show="current_page<pages-1" class="jump" class="jump" @click="jumpPage(pages)">{{pages}}</span> 
+       
+              <span class="jumppoint">跳至</span> 
+              <span class="jumpinp"><input type="text" v-model="changePage"></span> 
+              <span class="jump gobtn" @click="jumpPage(changePage)">GO</span> 
+            </div> 
+          </div> 
+        </div> 
+      </div>
+    </div>
+  <script type="text/javascript" src="http://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script> 
+  <script> 
+  var newlist = new Vue({ 
+    el: '#app', 
+    data: { 
+      current_page: 1, //当前页 
+      pages: 50, //总页数 
+      changePage:'',//跳转页 
+      nowIndex:0 
+    }, 
+    computed:{ 
+       show:function(){ 
+           return this.pages && this.pages !=1 
+       }, 
+       efont: function() { 
+         if (this.pages <= 7) return false; 
+         return this.current_page > 5 
+       }, 
+       indexs: function() { 
+   
+         var left = 1, 
+           right = this.pages, 
+           ar = []; 
+         if (this.pages >= 7) { 
+           if (this.current_page > 5 && this.current_page < this.pages - 4) { 
+             left = Number(this.current_page) - 3; 
+             right = Number(this.current_page) + 3; 
+           } else { 
+             if (this.current_page <= 5) { 
+               left = 1; 
+               right = 7; 
+             } else { 
+               right = this.pages; 
+   
+               left = this.pages - 6; 
+             } 
+           } 
+         } 
+         while (left <= right) { 
+           ar.push(left); 
+           left++; 
+         } 
+         return ar; 
+       }, 
+     }, 
+    methods: { 
+      jumpPage: function(id) { 
+        this.current_page = id; 
+      }, 
+    }, 
+  }) 
+  </script>
+  </body>
+</html>
