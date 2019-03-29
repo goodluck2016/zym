@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cart</title>
+  <link rel="stylesheet" type="text/css" href="css/cart.css" />
+</head>
+<body>
+  <div class="data-table">
+    <div class="t-hd">
+      <div class="hd-check">
+        <label><input type="checkbox" class="checkAll" /></label>
+      </div>
+      <div class="hd-commodityInfo">商品信息</div>
+      <div class="hd-unitPrice">单价(元)</div>
+      <div class="hd-number">数量</div>
+      <div class="hd-amount">金额(元)</div>
+      <div class="hd-operate">操作</div>
+    </div>
+    <div class="t-bd">
+      <ul class="good-list">
+        <li class="good-item">
+          <div class="bd-check">
+            <label><input type="checkbox" class="checkboxItem" /></label>
+          </div>
+          <div class="bd-commodityInfo">
+            <div class="info-pic"><img src="images/0.jpg" /></div>
+            <div class="info-text">
+              <a href="#">武林盟主第180代传人2019新款宝剑武侠版仗剑走天涯</a>
+            </div>
+            <div class="info-parameter">
+              <span>主要颜色：宝剑金色</span>
+              <span>尺码：XL</span>
+            </div>
+          </div>
+          <div class="bd-unitPrice itemPrice">
+            <del>189.00</del>
+            <b>69.00</b>
+          </div>
+          <div class="bd-number">
+            <a href="javascript:;" class="minus">-</a>
+            <input type="number" class="inputNum number" min="1" value="1"/>
+            <a href="javascript:;" class="plus">+</a>
+          </div>            
+          <div class="bd-amount itemSum">
+            <b>69.00</b>
+          </div>            
+          <div class="bd-operate">
+            <a href="javascript:;" class="delBtn">删除</a>
+          </div>
+        </li>
+        <li class="good-item">
+          <div class="bd-check">
+            <label><input type="checkbox" class="checkboxItem" /></label>
+          </div>
+          <div class="bd-commodityInfo">
+            <div class="info-pic"><img src="images/1.jpg" /></div>
+            <div class="info-text">
+              <a href="#">令胡冲第888代真传弟子2019新款宝剑笑傲江湖</a>
+            </div>
+            <div class="info-parameter">
+              <span>颜色分类：透明色</span>
+              <span>尺码：L</span>
+            </div>
+          </div>
+          <div class="bd-unitPrice itemPrice">
+            <del>398.00</del>
+            <b>96.00</b>
+          </div>
+          <div class="bd-number">
+            <a href="javascript:;" class="minus">-</a>
+            <input type="number" class="inputNum number" min="1" value="1"/>
+            <a href="javascript:;" class="plus">+</a>
+          </div>            
+          <div class="bd-amount itemSum">
+            <b>96.00</b>
+          </div>            
+          <div class="bd-operate">
+            <a href="javascript:;" class="delBtn">删除</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="t-ft">
+      <div class="ft-check">
+        <label><input type="checkbox" class="checkAll" /><span>全选</span></label>
+      </div>
+      <div class="ft-del"><a href="javascript:;" class="delAllBtn">批量删除</a></div>
+      <div class="ft-selectedGoods">
+        <span>已选商品<b>0</b>件</span>
+      </div>
+      <div class="ft-totalPrice">
+        <span>合计（不含运费）：</span><em>￥</em><b>0.00</b>
+        <a href="javascript:;" class="buyBtn">结算</a>
+      </div>
+    </div>
+  </div>
+  <div class="tipsBox">亲，这里是提示信息</div>
+
+  <script type="text/javascript" src="http://www.jq22.com/js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/cart.js"></script>
+</body>
+</html>

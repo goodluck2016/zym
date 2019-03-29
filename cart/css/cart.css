@@ -1,0 +1,61 @@
+*{ margin:0; padding:0}
+body{ font:12px "Microsoft YaHei";position:relative;}
+ul{ list-style:none;}
+a{ text-decoration:none;}			
+.data-table{ width:990px; margin:50px auto;}
+.data-table input[type=checkbox]{ position:relative; top:2px; right:5px;}			
+.t-hd{ border-top:1px solid #e6e6e6;border-bottom:1px solid #eee; overflow:hidden; padding:20px 15px;font-size: 13px;}			
+.hd-check{ width:30px;}
+.hd-commodityInfo{ width:470px;}
+.hd-unitPrice{ width:100px;}
+.hd-number{ width:120px;}
+.hd-amount{ width:135px;}
+.hd-operate{ width:80px;}
+
+.t-hd>div,
+.t-bd ul li>div,
+.t-ft>div,
+.bd-commodityInfo>div{ float:left;}			
+.t-bd ul li{ border-bottom:1px solid #eee; background-color:#fcfcfc; padding:15px 0; overflow:hidden;}			
+.t-bd ul li.selected{background-color:#fff8e1;}
+
+.bd-check{ width:30px; margin-left:15px;}
+.bd-commodityInfo{ width:440px;}			
+.bd-commodityInfo .info-pic{ width:60px; height:60px; overflow:hidden; margin-right:10px;}
+.bd-commodityInfo .info-pic img{ width:60px; height:60px;}
+.bd-commodityInfo .info-text{ width:190px; line-height:22px;}
+.bd-commodityInfo .info-text a{ color:#333;}
+.bd-commodityInfo .info-parameter{ width:130px; color:#999; margin-left:30px;}
+.bd-commodityInfo .info-parameter span{ display:block;}
+
+.bd-unitPrice{ width:100px; margin-left:30px;}
+.bd-unitPrice del,
+.bd-unitPrice b{ display:block;}
+.bd-unitPrice del{ color:#999;}
+.bd-number{ width:100px;}
+.bd-number a{ float:left; width:20px; height:22px; line-height:22px; background-color:#f0f0f0; border:1px solid #e5e5e5; text-align:center;}
+.bd-number input{ float:left; width: 30px; height:16px; padding:2px;}
+.bd-amount{ width:120px; margin-left:20px;}
+.bd-amount b,.ft-selectedGoods b,.t-ft .ft-totalPrice b{ color:#f40;}
+.bd-operate{ width:80px; margin-left:15px;}
+.bd-operate a{ color:#333;}			
+.bd-commodityInfo .info-text a:hover,
+.bd-operate a:hover,
+.ft-del a:hover{ color:#f40;}			
+
+.t-ft{ height:50px; line-height:50px; border-bottom:1px solid #e6e6e6; position:relative; font-size: 13px;}
+.ft-check{ margin-left:15px;}
+.ft-check label span{}
+.ft-del{ padding:0 20px;}
+.ft-del a{ color:#333;}
+.ft-selectedGoods{ margin-left:350px;}
+.ft-selectedGoods b{ padding:0 3px;}
+.t-ft .ft-totalPrice{ float:right; line-height:50px; overflow:hidden;}
+.t-ft .ft-totalPrice span{}
+.t-ft .ft-totalPrice em{ font-size:14px; color: #f40; font-style: normal;}
+.t-ft .ft-totalPrice b{ display: inline-block; width: 100px; font-size:20px; padding-right:20px;}
+.t-ft .ft-totalPrice a{ float:right;margin-top:10px; width:60px; height:30px;line-height:30px; text-align:center; color:#aaa; font-size:16px; border-radius:3px; background:#f40;color:#fff; /*cursor:not-allowed;*/}
+.t-ft .ft-totalPrice a.disable{ background-color:#ccc; color:#fff;}
+.t-ft .ft-totalPrice a.disable:hover{ background-color:#f40;}	
+
+.tipsBox{display:none;position:absolute;top:30%;left:50%;margin-top:-25px;margin-left:-100px;width: 200px; height: 50px; line-height: 50px;border-radius:3px;color:#fff;font-size:14px;text-align:center;background:rgba(0,0,0,.5);box-shadow: 0 0 5px rgba(0,0,0,.3);}
