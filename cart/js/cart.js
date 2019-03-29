@@ -86,7 +86,7 @@ $(function(){
       var itemPrice = parseFloat($(this).parent('.bd-number').parent('.good-item').find('.itemPrice').find('b').html());
       if(num > 1){
         num--;
-        $(this).next('.number').val(num-1);
+        $(this).next('.number').val(num);
       } else if(num===1) {
         $(this).next('.number').val(1);
         tipsBox('亲，数量不能再少啦');
