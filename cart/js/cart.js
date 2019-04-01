@@ -29,7 +29,7 @@ $(function(){
             itemPrice = parseFloat($(this).parent('.bd-number').parent('.good-item').find('.itemPrice').find('b').html());
         itemSum = (num*itemPrice).toFixed(2);
         $(this).parent('.bd-number').next('.itemSum').find('b').html(itemSum);
-      }      
+      }    
       $('.ft-totalPrice').find('b').html(sum.toFixed(2));
     });
   };
@@ -65,6 +65,7 @@ $(function(){
       $('.ft-totalPrice a').attr('class', 'buyBtn');
     }else{
       $('.ft-totalPrice a').attr('class', 'disable');
+      $('.ft-selectedGoods').find('b').html(0);
     }
   };
 
